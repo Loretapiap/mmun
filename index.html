@@ -2,12 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Municipalidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="assets/main.css"/>
 </head>
 <body>
-<div id="app">
+<div id="app" class="img-bg">
+    <div class="">
+        <img src="assets/logo.png" class="ui centered small image" alt="mmun logo">
+    </div>
+    <div class="ui text container txt-white">
+        <h1 class="ui inverted header">
+            ¡Que bueno verte por acá!
+        </h1>
+        <h2>Para construir un mejor lugar para vivir necesitamos saber quién eres</h2>
 
+        <form class="ui form">
+            <div class="field">
+                <label for="">Nombre y Apellido</label>
+                <input type="text" name="name">
+            </div>
+            <div class="field">
+                <label for="">Run</label>
+                <input type="text" name="run">
+            </div>
+
+            <div class="field">
+                <label>Fecha de nacimiento</label>
+                <input type="text" name="birthday">
+            </div>
+
+            <div :class="['field', isEmailValid()]">
+                <label for="">Correo</label>
+                <input type="text" name="email" v-model="email">
+            </div>
+
+            <div class="field">
+                <label for="">Nº de teléfono</label>
+                <input type="text" name="phone">
+            </div>
+
+
+            <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+        </form>
+
+
+        <small class="ui centered">Al crear una cuenta en MejorMunicipio.com aceptas automáticamente los términos de
+            servicio y políticas de privicidad
+        </small>
+    </div>
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
