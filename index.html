@@ -8,59 +8,89 @@
 </head>
 <body>
 <div id="app" class="img-bg">
-  <div class="overlay">
-
-    <div class="">
-        <img src="assets/logo.png" class="ui centered small image" alt="mmun logo">
-    </div>
-    <div class="ui text container txt-white">
-        <h1 class="ui red header text-center">
-            ¡Que bueno verte por acá!
-        </h1>
-        <h4 class="text-center">Para construir un mejor lugar para vivir necesitamos saber quién eres</h4>
-
-        <form class="ui form">
-            <div class="field">
-                <label for="">Nombre y Apellido</label>
-                <input type="text" name="name">
+    <div class="overlay">
+        <div v-if="seen">
+            <div class="ui container">
+                <img src="assets/logo.png" class="ui centered small image" alt="mmun logo">
             </div>
-            <div :class="['field', isRutValid()]">
-                <label>Run</label>
-                <input type="text" name="run" v-model="rut">
-            </div>
+            <div class="ui text container txt-white">
+                <h1 class="ui salmon header text-center">
+                    ¡Que bueno verte por acá!
+                </h1>
+                <h4 class="text-center">Para construir un mejor lugar para vivir necesitamos saber quién eres</h4>
 
-            <div class="field">
-                <label>Fecha de nacimiento</label>
-                <div class="ui calendar" id="date">
-                    <input type="text">
+                <form class="ui form">
+                    <div class="field">
+                        <label for="">Nombre y Apellido</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div :class="['field', isRutValid()]">
+                        <label>Run</label>
+                        <input type="text" name="run" v-model="rut">
+                    </div>
+
+                    <div class="field">
+                        <label>Fecha de nacimiento</label>
+                        <div class="ui calendar" id="date">
+                            <input type="text">
+                        </div>
+
+                    </div>
+
+                    <div :class="['field', isEmailValid()]">
+                        <label for="">Correo</label>
+                        <input type="text" name="email" v-model="email">
+                    </div>
+
+                    <div :class="['field', isPhoneValid()]">
+                        <label for="">Nº de teléfono</label>
+                        <input type="text" name="phone" v-model="phone">
+                    </div>
+
+
+                    <div class="ui huge teal button fluid" v-on:click="seen = !seen">Get Started <i class="right arrow icon"></i></div>
+
+                </form>
+
+
+                <p class="ui text-center">
+                    <small>
+                        Al crear una cuenta en MejorMunicipio.com aceptas automáticamente los términos de
+                        servicio y políticas de privicidad
+                    </small>
+                </p>
+
+                <p class="text-center">
+                    <i class="circle icon salmon"></i>
+                    <i class="circle icon teal"></i>
+                    <i class="circle icon teal"></i>
+                    <i class="circle icon teal"></i>
+                </p>
+            </div>
+        </div>
+
+        <div v-if="!seen">
+            <div class="ui py-25 salmon-bg">
+                <h1 class="ui header inverted text-center">¿Ésta es tu ubicación?</h1>
+            </div>
+            <div class="ui container">
+                <div class="txt-white text-center">
+                    <p>Queremos confirmar esta información para encontrar tu municipio</p>
                 </div>
 
+                 <div class="ui huge teal button fluid" v-on:click="seen = !seen">Confirmar ubicación</div>
+
+                <p class="text-center">
+                    <i class="circle icon teal"></i>
+                    <i class="circle icon salmon"></i>
+                    <i class="circle icon teal"></i>
+                    <i class="circle icon teal"></i>
+                </p>
+
             </div>
+        </div>
 
-            <div :class="['field', isEmailValid()]">
-                <label for="">Correo</label>
-                <input type="text" name="email" v-model="email">
-            </div>
-
-            <div :class="['field', isPhoneValid()]">
-                <label for="">Nº de teléfono</label>
-                <input type="text" name="phone" v-model="phone">
-            </div>
-
-
-            <div class="ui huge teal button">Get Started <i class="right arrow icon"></i></div>
-
-        </form>
-
-
-        <p class="ui text-center">
-            <small>
-                Al crear una cuenta en MejorMunicipio.com aceptas automáticamente los términos de
-            servicio y políticas de privicidad
-            </small>
-        </p>
     </div>
-  </div>
 </div>
 
 

@@ -24,8 +24,22 @@
 
 .field.has-error input {
     border-color: red !important;
+    background-color: #fff6f6 !important;
 }
 
 .text-center {
     text-align: center;
+}
+
+.salmon {
+    color: #FF6E5D !important;
+}
+
+.salmon-bg {
+    background: #FF6E5D;
+}
+
+.py-25 {
+   padding-top: 25px;
+   padding-bottom: 25px;
 }

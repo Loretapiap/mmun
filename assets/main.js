@@ -1,6 +1,7 @@
 new Vue({
   el: '#app',
    data: {
+    seen: true,
     email: '',
     rut: '',
     phone: '',
