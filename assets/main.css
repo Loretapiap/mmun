@@ -5,8 +5,17 @@
     background-size: cover;
 }
 
+.overlay {
+    min-height: 100vh;
+    background: rgba(0,0,0,0.35);
+}
+
 .txt-white {
     color: white;
+}
+
+.txt-white label {
+    color: white !important;
 }
 
 .field.has-success input {
@@ -15,4 +24,8 @@
 
 .field.has-error input {
     border-color: red !important;
+}
+
+.text-center {
+    text-align: center;
 }

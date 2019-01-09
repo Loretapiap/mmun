@@ -3,6 +3,7 @@ new Vue({
    data: {
     email: '',
     rut: '',
+    phone: '',
     reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
   },
   computed: {},
@@ -12,6 +13,9 @@ new Vue({
     },
     isRutValid: function() {
         return (this.rut == "")? "" : (Fn.validateRut(this.rut)) ? 'has-success' : 'has-error';
+    },
+    isPhoneValid: function() {
+        return (this.phone == "") ? "" : (this.phone.length == 9) ? 'has-success' : 'has-error';
     }
   }
 });
