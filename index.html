@@ -22,9 +22,9 @@
                 <label for="">Nombre y Apellido</label>
                 <input type="text" name="name">
             </div>
-            <div class="field">
-                <label for="">Run</label>
-                <input type="text" name="run">
+            <div :class="['field', isRutValid()]">
+                <label>Run</label>
+                <input type="text" name="run" v-model="rut">
             </div>
 
             <div class="field">
