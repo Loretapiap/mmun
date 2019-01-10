@@ -18,7 +18,10 @@ new Vue({
     isPhoneValid: function() {
         return (this.phone == "") ? "" : (this.phone.length == 9) ? 'has-success' : 'has-error';
     }
-  }
+  },
+  components: {
+        vuejsDatepicker
+    }
 });
 
 // rut validation
