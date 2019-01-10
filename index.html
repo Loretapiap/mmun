@@ -9,9 +9,7 @@
 <body>
 <div id="app" class="img-bg">
     <div class="overlay">
-
-       <div>
-            <transition name="fade" appear mode="out-in">
+        <transition name="fade" mode="out-in">
 
             <div key="3" v-if="seen">
                 <div>
@@ -79,9 +77,9 @@
 
             <div key="1" v-if="!seen">
                 <div>
-                    <div class="ui">
+                    <div class="ui" style="height: 60vh;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.3659696313243!2d-70.64023561184581!3d-33.437219079654085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c59966ce619d%3A0xaf52c03b366d363e!2sPaulino+Alfonso+390-18%2C+Santiago%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1547079676048"
-                                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
 
                     <div class="ui py-25 salmon-bg">
@@ -89,23 +87,22 @@
                     </div>
                     <div class="ui container">
                         <div class="txt-white text-center">
-                            <p>Queremos confirmar esta información para encontrar tu municipio</p>
+                            <h2 class="py-25">Queremos confirmar esta información para encontrar tu municipio</h2>
                         </div>
 
                         <div class="ui huge teal button fluid" v-on:click="seen = !seen">Confirmar ubicación</div>
 
-                        <p class="text-center">
+                        <h2 class="py-25 text-center">
                             <i class="circle icon teal"></i>
                             <i class="circle icon salmon"></i>
                             <i class="circle icon teal"></i>
                             <i class="circle icon teal"></i>
-                        </p>
+                        </h2>
 
                     </div>
                 </div>
             </div>
         </transition>
-       </div>
     </div>
 </div>
 
